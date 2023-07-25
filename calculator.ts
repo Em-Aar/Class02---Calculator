@@ -1,7 +1,7 @@
 
 // Command Line Calculator - without using Functions : Caters all the wrong inputs and offers '3' attempts to the user.
-import * as promptSync from 'prompt-sync'
-const prompt = promptSync ();   
+//import * as promptSync from 'prompt-sync'
+const prompt1 = require('promptSync') ();   
 
 let attempt_left = 3;   //User has assigned maximum '3' attempts.
 
@@ -13,15 +13,15 @@ while (attempt_left!=0) {
     Press '2' for Subtraction (a-b)
     Press '3' for Multiplication (a*b)
     Press '4' for Division (a/b)`);
-    let operation = prompt ("Enter relevant operation number only: ");  // To get the input from user regarding selection of operation.
+    let operation = prompt1 ("Enter relevant operation number only: ");  // To get the input from user regarding selection of operation.
 
     // if user enters correct data, the further inputs regarding first number and second number are asked.
     if (operation > 0 && operation < 5) {
         
         // This while loop shall run until all attempts for first number and second number inputs. 
         while (attempt_left!=0) {
-            let firstNumber = prompt ("Enter first Number (a): ");
-            let secondNumber = prompt ("Enter Second Number (b): ");
+            let firstNumber = prompt1 ("Enter first Number (a): ");
+            let secondNumber = prompt1 ("Enter Second Number (b): ");
             let a : number = parseInt (firstNumber);
             let b : number = parseInt (secondNumber);
             if (Number.isNaN(a) || Number.isNaN(b)) {
